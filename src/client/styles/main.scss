@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'my-font'; 
+    src: url('../fonts/Muli-VariableFont_wght.ttf');
+    font-weight: bold;
+}
+
+*{
+    font-family: 'my-font';
+}
+
+body {
+    background: url('../images/sea-2755908_640.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    
+    h1{
+        color: white;
+        margin: 0;
+    }
+}
+
+main {
+    margin: 150px auto;
+}
+
+#message #alert {
+    background-color: tomato;
+    color: black;
+    padding: 20px 40px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+  
+#trip_form {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 50px 15px;
+
+    > * {
+        margin-bottom: 5px;
+    } 
+}
+  
+
+#trip_form > input,
+.my-date-picker > input  {
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+
+.required-input {
+    border: 1px solid red;
+    position: relative;
+}
+
+
+#trip-list,
+#expired-trip {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 10px;    
+}
+
+.new-trip{
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    width: 280px;
+    font-weight: 600;
+
+    #destination-img{
+        width: 100%;
+        height: auto;
+
+        @media screen and (max-width:760px) {
+            width: 280px;
+        }
+    }
+
+    img[alt='flag'] {
+        width: 50px;
+    }
+
+    img[alt='weatherIcon']{
+        width: 25px;
+    }
+
+    img[alt='flag'] {
+        border: 1px solid black
+    }
+
+    .trip-header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 5px;
+        font-weight: 600;
+
+        button {
+            background-color: red;
+            border: none;
+            width: 30px;
+            height: 30px;
+            align-self: flex-start;
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+      
+    td {
+        text-align: left;
+        padding: 8px;
+
+        &:first-of-type{
+            width: 80px;
+        }
+    }
+      
+    tr:nth-child(odd){
+        background-color: #f2f2f2
+    }
+
+
+
+    .trip-weather {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        align-items: center;
+    }
+}
+
+
+#expired-trip * {
+    background-color: gray; 
+    color: white;
+
+    button{
+        background-color: red;
+    }
+}

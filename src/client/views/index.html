@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <h1>Travel Planner</h1>
+    </header>
+    <main>
+        <section>
+            <div id="message"></div>
+            <form id='trip_form'>
+                <div class="form-alert"></div>
+                <input type="text" id="location" name="Destination" placeholder="Destination">
+                <fieldset class="my-date-picker">
+                    <input type="text" name="Departing date" id="departing-date">
+                </fieldset>
+                <fieldset class="my-date-picker">
+                    <input type="text" name="Returning date" id="returning-date">
+                </fieldset>
+                <input type="submit" id="submit" value="submit">
+            </form>
+
+            <div id="trip-list">
+
+            </div>
+            <div id="expired-trip">
+
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(registration =>{
+                    console.log('SW registered successfuly: ', registration);
+                })
+            });
+        }else{
+            console.log("Service Working not supported");
+        }
+    </script>
+</body>
+</html>
