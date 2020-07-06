@@ -6,9 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/server/server.js",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server --open --config webpack.dev.js "
+    "start": "webpack -p && node src/server/server.js",
   },
   "keywords": [],
   "author": "Ahmed Ibrahim",
